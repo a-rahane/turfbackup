@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Home</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="css/HomeStyles.css">
+        <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous"> -->
+
+        
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:500&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <header>
+            <!-- <a class="logo" href="/"><img src="images/logo.svg" alt="logo"></a> -->
+            <nav>
+                <ul class="nav__links">
+                    <li><a href="/turfbackup/Home.html">Home</a></li>
+                    <li><a href="/turfbackup/Turfside/addturf.php">List Turf</a></li>
+                    <li><a href="#about">About</a></li>
+                </ul>
+            </nav>
+            <a class="cta" href="#review">Review</a>
+        </header>
+        <div class="row">
+          <div class="side"></div>
+            <div class="main">
+              <div class="text">
+              <h3>TURF</h3>
+              <h2>Be the best athlete that you can be.</h2>
+              <button onclick="window.location.href='/turfbackup/Login.php'">Login</button>
+            </div>
+          </div>
+        </div>
+
+        <!--About-->
+        <div class="about" id="about">
+          <div class="left-about">
+            <div class="about-heading">
+            <center><h1 class="h1-about">ABOUT</h1></center>
+            <center><h5 class="h5-about">Get to know us</h5></center>
+            </div>
+          </div>
+          <div class="right-about">
+            <div class="about-text">
+            <h4>Our website has many more purposes besides serving as a platform for booking turf. Our website offers services like team creation, player invitation, choosing the best playing surface, and many more. For instance, if your team consists of seven people and you want to play football, seven persons on the field is far too few for an entertaining match. However, you only know seven individuals and are unsure of where to find the other seven participants. We therefore spent some time on this before coming up with a concept. We provide two-team matches, so all you have to do is create your team, and the algorithm of the website will find or create your competitor team. We also provide a range of payment methods for the convenience of our clients.</h4>
+            </div>
+          </div>
+        </div>
+
+        <!--Review-->
+        <div class="review-main" id="review">
+          <div class="left-review">
+            <div class="review-heading">
+            <center><h1 class="h1-review">REVIEW</h1></center>
+            <center><h5 class="h5-review">How was your experience</h5></center>
+            </div>
+          </div>
+          <div class="right-review">
+            <div class="review-text">
+              <div class="review">
+                <script src="https://use.fontawesome.com/a6f0361695.js"></script>
+      
+                <form id="feedback" action="">
+                <div class="pinfo">Your personal info</div>
+        
+                  <div class="form-group">
+                    <div class="col-md-4 inputGroupContainer">
+                      <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                        <input  name="name" placeholder="John Doe" class="form-control"  type="text">
+                      </div>
+                    </div>
+                  </div>
+      
+                  <div class="form-group">
+                    <div class="col-md-4 inputGroupContainer">
+                      <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+                        <input name="email" type="email" class="form-control" placeholder="john.doe@yahoo.com">
+                      </div>
+                    </div>
+                  </div>
+      
+      
+                  <div class="pinfo">Rate our overall services.</div>
+        
+      
+                  <div class="form-group">
+                    <div class="col-md-4 inputGroupContainer">
+                      <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-heart"></i></span>
+                          <select class="form-control" id="rate">
+                            <option value="1star">1</option>
+                            <option value="2stars">2</option>
+                            <option value="3stars">3</option>
+                            <option value="4stars">4</option>
+                            <option value="5stars">5</option>
+                          </select>
+                      </div>
+                    </div>
+                  </div>
+      
+                  <div class="pinfo">Write your feedback.</div>
+        
+      
+                  <div class="form-group">
+                    <div class="col-md-4 inputGroupContainer">
+                      <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-pencil"></i></span>
+                        <textarea class="form-control" id="review" rows="3"></textarea>
+       
+                      </div>
+                    </div>
+                  </div>
+      
+                  <button type="submit" class="btn btn-primary">Submit</button>
+      
+      
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="footer">
+          <h2></h2>
+        </div>
+    </body>
+</html>
