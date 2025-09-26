@@ -1,8 +1,8 @@
 # Use PHP + Apache official image
 FROM php:8.2-apache
 
-# Enable MySQL extension in PHP
-RUN docker-php-ext-install mysqli
+# Install PDO MySQL extension
+RUN docker-php-ext-install pdo pdo_mysql
 
 # Copy all your project files into the server folder
 COPY . /var/www/html/
