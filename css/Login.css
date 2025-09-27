@@ -1,9 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap');
 body {
   font-family: "Montserrat", sans-serif;
-  
   background: #0c2605;
-
 }
 
 .container {
@@ -131,9 +129,11 @@ section#formHolder {
 
 .form {
   position: relative;
+  overflow: hidden; /* This prevents both forms from showing */
 }
+
+/* Base form styling */
 .form .form-peice {
-  /* background: #b0ff50; */
   min-height: 550px;
   margin-top: 30px;
   box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
@@ -142,28 +142,48 @@ section#formHolder {
   transition: all 0.9s cubic-bezier(1, -0.375, 0.285, 0.995);
   position: absolute;
   top: 0;
-  left: -30%;
-  width: 130%;
-  overflow: hidden;
+  width: 100%;
   background: #d6ffb7;
   box-shadow: 0 8px 32px 0 #134611;
-  backdrop-filter: blur( 4px );
-  -webkit-backdrop-filter: blur( 4px );
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
   border-radius: 10px;
-  border: 1px solid rgba( 255, 255, 255, 0.18 );
+  border: 1px solid rgba(255, 255, 255, 0.18);
 }
-.form .form-peice.switched {
-  transform: translateX(-100%);
-  width: 100%;
+
+/* Login form - visible by default */
+.form .login.form-peice {
   left: 0;
+  transform: translateX(0);
+  z-index: 2;
 }
+
+/* Signup form - hidden by default */
+.form .signup.form-peice {
+  left: 0;
+  transform: translateX(100%);
+  z-index: 1;
+}
+
+/* When login has 'switched' class - hide it */
+.form .login.form-peice.switched {
+  transform: translateX(-100%);
+  z-index: 1;
+}
+
+/* When signup has 'switched' class - show it */
+.form .signup.form-peice.switched {
+  transform: translateX(0);
+  z-index: 2;
+}
+
 .form form {
   padding: 0 40px;
   margin: 0;
   width: 70%;
   position: absolute;
   top: 50%;
-  left: 60%;
+  left: 50%;
   transform: translate(-50%, -50%);
 }
 .form form .form-group {
@@ -236,9 +256,11 @@ section#formHolder {
   margin-right: 20px;
   border: none;
   font-family: "Montserrat", sans-serif;
+  cursor: pointer;
 }
 .form form .CTA input:hover{
   color: #8ebf24;
+  background: #2d6b0f;
 }
 .form form .CTA a.switch {
   font-size: 13px;
@@ -247,6 +269,7 @@ section#formHolder {
   color: #5d8f00;
   text-decoration: underline;
   transition: all 0.3s;
+  cursor: pointer;
 }
 .form form .CTA a.switch:hover {
   color: #0c2605;
@@ -291,7 +314,6 @@ header {
 .nav__links li a:hover {
   color: #a9b388;
 }
-
 
 body {
   font-family: Arial, Helvetica, sans-serif;
@@ -350,10 +372,14 @@ footer p a:hover, footer p a:focus:hover {
     width: 100% !important;
     transition: all 0.5s ease-in-out;
   }
-  section#formHolder .form .form-peice.switched {
+  section#formHolder .form .login.form-peice.switched {
     transform: translateY(-100%);
-    width: 100%;
-    left: 0;
+  }
+  section#formHolder .form .signup.form-peice.switched {
+    transform: translateY(0);
+  }
+  section#formHolder .form .signup.form-peice {
+    transform: translateY(100%);
   }
   section#formHolder .form .form-peice > form {
     width: 100% !important;
@@ -371,4 +397,3 @@ footer p a:hover, footer p a:focus:hover {
     font-size: 50px !important;
   }
 }
-
