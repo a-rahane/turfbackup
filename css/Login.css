@@ -1,12 +1,19 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
 body {
   font-family: "Montserrat", sans-serif;
   background: #0c2605;
   margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
 }
 
 .container {
-  max-width: 900px;
+  width: 100%;
+  max-width: 450px;
+  padding: 20px;
 }
 
 a {
@@ -21,177 +28,100 @@ input {
 h1 {
   text-align: center;
   text-transform: uppercase;
-  margin-bottom: 40px;
+  margin-bottom: 30px;
   font-weight: 700;
-}
-
-section#formHolder {
-  padding: 50px 0;
-}
-
-.brand {
-  padding: 20px;
-  background: url(https://goo.gl/A0ynht);
-  background-size: cover;
-  background-position: center center;
-  color: #2e590e;
-  min-height: 600px;
-  position: relative;
-  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
-  transition: all 0.6s cubic-bezier(1, -0.375, 0.285, 0.995);
-}
-.brand::before {
-  content: "";
-  display: block;
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  background: #8ebf24;
-  z-index: -1;
-}
-.brand .heading {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  transition: all 0.6s;
-}
-.brand .heading h2 {
-  font-size: 70px;
-  font-weight: 700;
-  text-transform: uppercase;
-  margin-bottom: 0;
-}
-.brand .heading p {
-  font-size: 15px;
-  font-weight: 300;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  font-family: "Raleway", sans-serif;
-}
-
-/* === FORMS === */
-.form {
-  position: relative;
-  width: 800px;
-  height: 550px; /* 👈 ensures brand + form piece align */
-  margin: 50px auto;
-  display: flex;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 8px 32px 0 #134611;
-}
-
-/* Left side branding */
-.form .brand {
-  flex: 1;
-  background: #134611; /* 👈 solid green */
-  color: #d6ffb7;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center; /* centers vertically */
-  text-align: center;
-  padding: 20px;
-  height: 100%; /* 👈 fills parent */
-}
-.form .brand h2 {
   font-size: 28px;
-  margin-bottom: 20px;
-}
-.form .brand p {
-  font-size: 16px;
   color: #fff;
 }
 
-/* Right side forms */
-.form .form-peice {
-  position: absolute;
-  top: 0;
-  left: 50%; /* 👈 start from middle */
-  width: 50%; /* 👈 take half */
-  height: 100%; /* 👈 full height */
-  padding: 40px 30px;
+/* === FORM HOLDER === */
+.form {
+  position: relative;
   background: #d6ffb7;
-  border-radius: 0;
-  opacity: 0;
-  transform: translateX(100%);
-  transition: all 0.5s ease-in-out;
-  z-index: 1;
+  padding: 30px 30px 40px;
+  border-radius: 10px;
+  box-shadow: 0 8px 32px 0 #134611;
+  overflow: hidden;
+}
+
+/* Each form piece */
+.form .form-peice {
+  display: none;
 }
 .form .form-peice.active {
-  opacity: 1;
-  transform: translateX(0);
-  z-index: 2;
+  display: block;
 }
 
-
+/* Form elements */
 .form form .form-group {
-  margin-bottom: 15px;
-  position: relative;
+  margin-bottom: 20px;
 }
 .form form label {
   font-size: 12px;
   font-weight: 500;
   text-transform: uppercase;
-  color: #5d8f00;
+  color: #134611;
 }
 .form form input:not([type=submit]) {
   background: none;
-  outline: none;
   border: none;
-  display: block;
-  padding: 10px 0;
+  border-bottom: 2px solid #134611;
   width: 100%;
-  border-bottom: 1px solid #5d8f00;
-  color: #444;
+  padding: 10px 5px;
   font-size: 15px;
+  color: #333;
   font-family: "Montserrat", sans-serif;
 }
+
+/* CTA buttons */
 .form form .CTA {
-  margin-top: 30px;
+  margin-top: 25px;
+  text-align: center;
 }
 .form form .CTA input {
-  font-size: 12px;
+  font-size: 14px;
   text-transform: uppercase;
-  padding: 5px 30px;
+  padding: 8px 30px;
   background: #3E8914;
   color: #fff;
   border-radius: 30px;
-  margin-right: 20px;
   border: none;
+  cursor: pointer;
+  transition: background 0.3s ease;
 }
-.form form .CTA input:hover{
-  color: #8ebf24;
+.form form .CTA input:hover {
+  background: #134611;
 }
 .form form .CTA a.switch {
+  display: block;
+  margin-top: 15px;
   font-size: 13px;
   font-weight: 400;
-  color: #5d8f00;
+  color: #134611;
   text-decoration: underline;
-  transition: all 0.3s;
+  transition: color 0.3s;
 }
 .form form .CTA a.switch:hover {
-  color: #0c2605;
+  color: #3E8914;
 }
 
 /* HEADER */
 header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
   display: flex;
   justify-content: flex-end;
   align-items: center;
   padding: 15px 10%;
   background-color: #000000;
 }
-.logo {
-  margin-right: auto;
-}
 .nav__links {
   list-style: none;
   display: flex;
+  margin: 0;
+  padding: 0;
 }
 .nav__links a {
   font-size: 17px;
@@ -210,6 +140,7 @@ header {
 /* FOOTER */
 footer {
   text-align: center;
+  margin-top: 40px;
 }
 footer p {
   color: #777;
@@ -222,6 +153,7 @@ footer p a {
 footer p a:hover {
   color: #3E8914;
 }
+
 
 /* RESPONSIVE */
 @media (max-width: 768px) {
