@@ -7,6 +7,6 @@ session_unset(); // Unset all session variables
 session_destroy(); // Destroy the session
 
 // Redirect the user to the login page or any desired page
-header("Location: /turfbackup/Home.html");
+header("Location: /Home.html");
 exit();
 ?>

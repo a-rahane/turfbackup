@@ -18,9 +18,9 @@ require_once("config.php");
    <!-- <a class="logo" href="/"><img src="images/logo.svg" alt="logo"></a> -->
       <nav>
          <ul class="nav__links">
-            <li><a href="/turfbackup/Home.html">Home</a></li>
-            <li><a href="/turfbackup/Home.html#about">About</a></li>
-            <li><a href="/turfbackup/Home.html#review">Review</a></li>
+            <li><a href="/Home.html">Home</a></li>
+            <li><a href="/Home.html#about">About</a></li>
+            <li><a href="/Home.html#review">Review</a></li>
          </ul>
       </nav>
 </header>

@@ -1,21 +1,22 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add Turf</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1"><link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css'>
-    <link rel="stylesheet" href="../css/addturf.css">
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css'>
+    <link rel="stylesheet" href="/css/addturf.css">
 
 </head>
 <body>
 <header>
-   <!-- <a class="logo" href="/"><img src="images/logo.svg" alt="logo"></a> -->
+   <!-- <a class="logo" href="/"><img src="/images/logo.svg" alt="logo"></a> -->
       <nav>
          <ul class="nav__links">
-            <li><a href="/turfbackup/Home.html">Home</a></li>
-            <li><a href="/turfbackup/Home.html#about">About</a></li>
-            <li><a href="/turfbackup/Home.html#review">Review</a></li>
+            <li><a href="/Home.html">Home</a></li>
+            <li><a href="/Home.html#about">About</a></li>
+            <li><a href="/Home.html#review">Review</a></li>
          </ul>
       </nav>
 </header>
@@ -155,7 +156,7 @@
 
                 $.ajax({
                     type : 'POST',
-                    url : 'addturfprocess.php',
+                    url : '/Turfside/addturfprocess.php',
                     data : {
                         name: name,
                         email: email,
@@ -172,7 +173,7 @@
                             'icon':'success'
                         })
                         setTimeout(function(){
-                            //  window.location.href = "/Turfapp/index.php"; //ADD REDIRECT ADDRESS
+                            //  window.location.href = "/index.php"; //ADD REDIRECT ADDRESS
                         },2000);
                     },
                     error : function(data){
@@ -194,7 +195,7 @@
 
    <script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js'></script>
    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
-   <script  src="./addturf.js"></script>
+   <script src="/Turfside/addturf.js"></script>
     
 </body>
 </html>

@@ -1,8 +1,16 @@
 <?php
+$host = getenv('MYSQLHOST');
+$port = getenv('MYSQLPORT');
+$db   = getenv('MYSQLDATABASE');
+$user = getenv('MYSQLUSER');
+$pass = getenv('MYSQLPASSWORD');
 
-$db_user = "root";
-$db_pass = "";
-$db_name = "userauth";
+$dsn = "mysql:host=$host;port=$port;dbname=$db;charset=utf8mb4";
 
-$db = new PDO('mysql:host=localhost;dbname='. $db_name . ';charset =utf8', $db_user,$db_pass);
-$db -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+try {
+    $pdo = new PDO($dsn, $user, $pass);
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+} catch (PDOException $e) {
+    die("Database connection failed: " . $e->getMessage());
+}
+?>

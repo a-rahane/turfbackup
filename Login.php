@@ -6,21 +6,20 @@ require_once('config.php')
 <head>
   <meta charset="UTF-8">
   <title>LOGIN PAGE</title>
-  <link rel="stylesheet" href="Login.css">
+  <link rel="stylesheet" href="/css/Login.css">
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Raleway:300,600" rel="stylesheet">
    <meta name="viewport" content="width=device-width, initial-scale=1">
    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css'>
-   <link rel="stylesheet" href="css/Login.css">
 
 </head>
 <body>
 <header>
-   <!-- <a class="logo" href="/"><img src="images/logo.svg" alt="logo"></a> -->
+   <!-- <a class="logo" href="/"><img src="/images/logo.svg" alt="logo"></a> -->
       <nav>
          <ul class="nav__links">
-            <li><a href="/turfbackup/Home.html">Home</a></li>
-            <li><a href="/turfbackup/Home.html#about">About</a></li>
-           <li><a href="/turfbackup/Home.html#review">Review</a></li>
+            <li><a href="/Home.html">Home</a></li>
+            <li><a href="/Home.html#about">About</a></li>
+           <li><a href="/Home.html#review">Review</a></li>
          </ul>
       </nav>
 </header>
@@ -81,12 +80,12 @@ require_once('config.php')
                      e.preventDefault();
                      $.ajax({
                         type: 'POST',
-                        url: 'jslogin.php',
+                        url: '/jslogin.php',
                         data:  {loginemail: loginemail, loginpassword: loginpassword},
                         success: function(data){
                            alert(data);
                            if($.trim(data) === "1"){
-                              setTimeout(' window.location.href =  "index.php"', 1000);
+                              setTimeout(' window.location.href =  "/index.php"', 1000);
                            }
                         },
                         error: function(data){
@@ -162,7 +161,7 @@ require_once('config.php')
 
                         $.ajax({
                            type : 'POST',
-                           url : 'process.php',
+                           url : '/process.php',
                            data : {fullname: fullname,email: email,phone: phone,aadhar: aadhar,password: password},
 
                            success : function(data){
@@ -172,7 +171,7 @@ require_once('config.php')
                               //    'icon':'success'
                               // })
                               setTimeout(function(){
-                                 window.location.href = "index.php"; //ADD REDIRECT ADDRESS
+                                 window.location.href = "/index.php"; //ADD REDIRECT ADDRESS
                               },2000);
                            },
                            error : function(data){
@@ -206,7 +205,7 @@ require_once('config.php')
 <!-- partial -->
    <script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js'></script>
    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
-   <script  src="./script.js"></script>
+   <script src="/script.js"></script>
 
 </body>
 </html>
