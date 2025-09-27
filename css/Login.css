@@ -76,18 +76,47 @@ section#formHolder {
 /* === FORMS === */
 .form {
   position: relative;
-  min-height: 550px;
+  width: 800px;
+  height: 550px; /* 👈 ensures brand + form piece align */
+  margin: 50px auto;
+  display: flex;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px 0 #134611;
 }
+
+/* Left side branding */
+.form .brand {
+  flex: 1;
+  background: #134611; /* 👈 solid green */
+  color: #d6ffb7;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; /* centers vertically */
+  text-align: center;
+  padding: 20px;
+  height: 100%; /* 👈 fills parent */
+}
+.form .brand h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+.form .brand p {
+  font-size: 16px;
+  color: #fff;
+}
+
+/* Right side forms */
 .form .form-peice {
   position: absolute;
   top: 0;
-  left: 0;
-  width: 100%;
-  min-height: 550px;
-  padding: 30px 40px 60px;
+  left: 50%; /* 👈 start from middle */
+  width: 50%; /* 👈 take half */
+  height: 100%; /* 👈 full height */
+  padding: 40px 30px;
   background: #d6ffb7;
-  box-shadow: 0 8px 32px 0 #134611;
-  border-radius: 10px;
+  border-radius: 0;
   opacity: 0;
   transform: translateX(100%);
   transition: all 0.5s ease-in-out;
@@ -98,6 +127,7 @@ section#formHolder {
   transform: translateX(0);
   z-index: 2;
 }
+
 
 .form form .form-group {
   margin-bottom: 15px;
