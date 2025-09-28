@@ -12,7 +12,7 @@ if (empty($loginemail) || empty($loginpassword)) {
 
 try {
     // Prepare statement safely
-    $stmt = $db->prepare("SELECT * FROM users WHERE email = ? AND password = ? LIMIT 1");
+    $stmt = $pdo->prepare("SELECT * FROM users WHERE email = ? AND password = ? LIMIT 1");
     $stmt->execute([$loginemail, $loginpassword]);
 
     $user = $stmt->fetch(PDO::FETCH_ASSOC);

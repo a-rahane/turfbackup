@@ -17,7 +17,7 @@ $sql = "SELECT team.invitee, users.fullname, users.phone
         WHERE inviter = ?";
 $inviter_email = $_SESSION['user_email'];
 
-$stmt = $db->prepare($sql);
+$stmt = $pdo->prepare($sql);
 $result = $stmt->execute([$inviter_email]);
 // echo $stmt->rowCount;
 
@@ -46,7 +46,7 @@ if($stmt->rowCount() > 0){
       $sql = "SELECT team.inviter, users.fullname, users.phone FROM team INNER JOIN users ON team.inviter = users.email WHERE invitee = '$invitee_email'";
       // echo $sql;
       
-      $stmt = $db->prepare($sql);
+      $stmt = $pdo->prepare($sql);
       
       $result = $stmt->execute();
       
@@ -74,7 +74,7 @@ if($stmt->rowCount() > 0){
             $inviter_email = $main_inviter;
             // echo $inviter_email;
 
-            $stmt = $db->prepare($sql);
+            $stmt = $pdo->prepare($sql);
             $result = $stmt->execute([$inviter_email]);
             // echo $stmt->rowCount();
 

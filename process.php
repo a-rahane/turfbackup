@@ -22,7 +22,7 @@ if(isset($_POST)){
 
 
     $sql = "INSERT INTO users (fullname, email, phone, aadhar, password ) VALUES(?,?,?,?,?)";
-    $stmtinsert = $db->prepare($sql);
+    $stmtinsert = $pdo->prepare($sql);
 
     $result = $stmtinsert->execute([$fullname, $email, $phone, $aadhar, $password]);
 

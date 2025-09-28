@@ -17,7 +17,7 @@ $perHead = $totalAmount; // default for solo
 
 
 $sql = "SELECT * FROM team WHERE inviter = ?";
-$stmt = $db->prepare($sql);
+$stmt = $pdo->prepare($sql);
 $result = $stmt->execute([$inviter_email]);
 
   

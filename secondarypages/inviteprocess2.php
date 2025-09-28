@@ -12,7 +12,7 @@ if (!isset($_SESSION['user_email']) || empty($_SESSION['user_email'])) {
 if (isset($_POST['delete'])) {
     $id = $_POST['id'];
     $sql = "DELETE FROM invites WHERE id = ?";
-    $stmt = $db->prepare($sql);
+    $stmt = $pdo->prepare($sql);
     $stmt->execute([$id]);
 }
 
@@ -20,14 +20,14 @@ if (isset($_POST['accept'])) {
     $inviter = $_POST['inviter'];
     $invitee = $_POST['invitee'];
     $sql = "INSERT INTO team (inviter, invitee) VALUES (?, ?)";
-    $stmt = $db->prepare($sql);
+    $stmt = $pdp->prepare($sql);
     $stmt->execute([$inviter, $invitee]);
     // You may also want to delete the original invitation from the invites table
 }
 
 $sql = "SELECT * FROM invites WHERE invitee = ?";
 $email = $_SESSION['user_email'];
-$stmt = $db->prepare($sql);
+$stmt = $pdo->prepare($sql);
 $result = $stmt->execute([$email]);
 
 // process result set
@@ -36,7 +36,7 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
     $invitee = $row["invitee"];
     // Check if the invitation has been accepted already
     $sql2 = "SELECT COUNT(*) as count FROM team WHERE inviter = ? AND invitee = ?";
-    $stmt2 = $db->prepare($sql2);
+    $stmt2 = $pdo->prepare($sql2);
     $result2 = $stmt2->execute([$inviter, $invitee]);
     $count = $stmt2->fetch(PDO::FETCH_ASSOC)['count'];
     if ($count == 0) {

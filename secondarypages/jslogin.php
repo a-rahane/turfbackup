@@ -15,7 +15,7 @@ $loginpassword = $_POST['loginpassword'];
 //echo $loginpassword;
 
 $sql = "SELECT * FROM users WHERE email = ? AND password = ? LIMIT 1"; //try db names of fields if doesnt work
-$stmtselect  = $db->prepare($sql);
+$stmtselect  = $pdo->prepare($sql);
 $result = $stmtselect->execute([$loginemail, $loginpassword]);
 
 if($result){

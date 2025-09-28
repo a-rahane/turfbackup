@@ -35,7 +35,7 @@ $sql = "SELECT * FROM matches
         WHERE turf = ?
         AND date = ?
         AND slot = ?";
-$stmtselect = $db->prepare($sql);
+$stmtselect = $pdo->prepare($sql);
 $result = $stmtselect->execute([$turfname,$date,$time]);
 
 
@@ -57,7 +57,7 @@ if($stmtselect->rowCount() > 0){
                     AND slot = '$time'";
         // echo $new_sql;   
 
-        $stmtselect = $db->prepare($new_sql);
+        $stmtselect = $pdo->prepare($new_sql);
         $result = $stmtselect->execute();
             
     }
@@ -71,7 +71,7 @@ else{
     $new_sql = "INSERT INTO matches (turf,date,slot,inviter1) 
                 VALUES (?,?,?,?)";
 
-    $stmtselect = $db->prepare($new_sql);
+    $stmtselect = $pdo->prepare($new_sql);
     $result = $stmtselect->execute([$turfname,$date,$time,$email]);
     if ($result) {
         echo 'match request created';

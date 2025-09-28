@@ -18,7 +18,7 @@ if(isset($_POST['searchTerm'])){
 //     echo $sql;
 //   } 
 
-$result = $db->query($sql);
+$result = $pdo->query($sql);
 
 // Check if there are any rows in the result
 if ($result->rowCount() > 0) {

@@ -49,7 +49,7 @@ if(isset($_POST)){
     
 
 $sql = "INSERT INTO turfs (name, email, contact1, contact2, address, sport, images) VALUES(?,?,?,?,?,?,?)";
-$stmtinsert = $db->prepare($sql);
+$stmtinsert = $pdo->prepare($sql);
 $result = $stmtinsert->execute([$name, $email, $contact1, $contact2, $address, $sportstring, $images ]);
 echo $result;
 
